@@ -1,0 +1,18 @@
+# dynamic inventory (di) file to fetch details of the running hosts
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+profile: default
+
+filters:
+  instance-state-name: running
+
+keyed_groups:
+  - key: tags['Role']
+    prefix: di
+
+hostnames: private-ip-address
+
+compose:
+  ansible_host: public_ip_address

@@ -1,0 +1,25 @@
+---
+- name: Upload Image to S3
+  hosts: localhost
+  roles:
+    - shared
+    - uploadtos3
+
+- name: Install and Configure HTTPD with S3 Image
+  hosts: di_Webserver
+  become: true
+
+  vars:
+    ansible_user: ec2-user
+    ansible_ssh_private_key_file: ../terraform/key
+    ansible_ssh_common_args: >
+      -o ProxyCommand='ssh
+      -o StrictHostKeyChecking=no
+      -i ../terraform/key
+      -W %h:%p
+      -q ec2-user@{{ hostvars[groups.di_Bastion.0].ansible_host }}'
+
+  roles:
+    - shared
+    - install_httpd
+    - modifyindexpage

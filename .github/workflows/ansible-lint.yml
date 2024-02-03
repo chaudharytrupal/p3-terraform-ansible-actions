@@ -1,0 +1,27 @@
+name: Ansible Lint
+
+on:
+  push:
+    branches:
+      - terraform-ec2
+      - staging
+      - prod
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Ansible Linter
+        run: pip install ansible-lint
+
+      - name: Run Ansible Linter
+        run: ansible-lint .

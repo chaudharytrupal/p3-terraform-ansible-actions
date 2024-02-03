@@ -1,0 +1,6 @@
+---
+- name: Update index.html with S3 object URL
+  ansible.builtin.template:
+    src: index.j2
+    dest: /var/www/html/index.html
+    mode: "0666"

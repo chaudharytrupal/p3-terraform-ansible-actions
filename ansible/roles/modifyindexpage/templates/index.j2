@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #004080;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #f2f2f2;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 12px;
+    }
+    th {
+      background-color: #004080;
+      color: white;
+    }
+    td {
+      background-color: #ffffff;
+    }
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+  <title>Breezy Archery's WebPage</title>
+</head>
+<body>
+  <h1>Welcome to Breezy Archery's website!</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Team Members</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Trupal Chaudhary</td>
+      </tr>
+      <tr>
+        <td>Vaishnavi Barot</td>
+      </tr>
+      <tr>
+        <td>Tobe Segun-Owolabi</td>
+      </tr>
+      <tr>
+        <td>Keerthigan Lalitharan</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Images:</h2>
+  <img src="https://{{ shared_s3bucketname }}.s3.amazonaws.com/breezy-archery.png" alt="Breezy Archery">
+  <img src="https://{{ shared_s3bucketname }}.s3.amazonaws.com/trupal.png" alt="Trupal">
+
+</body>
+</html>
