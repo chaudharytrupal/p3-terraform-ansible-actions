@@ -1,0 +1,30 @@
+# Ignore Terraform .terraform directory
+.terraform/
+
+/terraform/.terraform
+/terraform/.terraform.lock.hcl
+
+/terraform/key
+
+/terraform/key.pub
+
+# Ignore files containing sensitive information
+*.tfstate
+*.tfstate.*
+*.tfvars
+/terraform/*.tfvars
+
+# Ignore local .terraform directories
+**/.terraform/*
+
+# Ignore .DS_Store files on macOS
+.DS_Store
+
+# Ignore .vscode directory
+.vscode/
+
+# Ignore .idea directory used by IntelliJ
+.idea/
+
+# Ignore .terraform.lock.hcl file
+.terraform.lock.hcl
