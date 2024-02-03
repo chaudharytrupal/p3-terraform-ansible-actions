@@ -15,4 +15,4 @@ terraform/key.pub
 .idea/
 
 # Ignore Terraform lock file
-terraform.lock.hcl
+terraform/.terraform.lock.hcl
